@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Generator</title>
+    <link rel="stylesheet" href="learn.css">
+</head>
+<body>
+    <!-- <div class="navbar">
+        <a href="assessment.html">Assessment</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="lectures.html">Lectures</a>
+        <a class="active" href="learn.html">Engage and Learn</a>
+        <a href="custom.html">Home</a>
+      </div>
+     -->
+
+    <div class="container">
+        <div id="output" class="output">Your generated text will appear here.</div>
+    </div>
+
+    <div class="footer">
+        <textarea id="prompt" placeholder="Enter your prompt here..."></textarea>
+        <button onclick="generateText()">Generate</button>
+    </div>
+
+    <script>
+        async function generateText() {
+            const prompt = document.getElementById("prompt").value;
+            const outputDiv = document.getElementById("output");
+
+            if (!prompt) {
+                outputDiv.innerText = "Please enter a prompt!";
+                return;
+            }
+
+            outputDiv.innerText = "Generating text...";
+            try {
+                const response = await fetch("http://localhost:5000/generate", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ prompt }),
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    outputDiv.innerText = data.generated_text;
+                } else {
+                    outputDiv.innerText = "Error: " + data.error;
+                }
+            } catch (error) {
+                outputDiv.innerText = "Error: Unable to connect to the server.";
+            }
+        }
+    </script>
+</body>
+</html>
