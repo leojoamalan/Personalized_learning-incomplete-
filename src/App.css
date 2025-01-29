@@ -1,0 +1,97 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: white;
+  overflow-x: hidden;
+}
+
+.platform {
+  text-align: center;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.header h1 {
+  font-size: 3rem;
+  color: #f39c12;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.query-section {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.query-input {
+  width: 60%;
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  background: #f39c12;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.response-section {
+  margin-top: 50px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  width: 70%;
+  margin: 0 auto;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.response-section h3 {
+  color: #f39c12;
+  font-size: 1.5rem;
+}
+
+.answer {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.recommendations {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.recommendations li {
+  background: #2c3e50;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 8px;
+}
